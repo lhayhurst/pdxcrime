@@ -5,9 +5,9 @@ import pandas as pd
 
 
 def get_neighborhoods() -> io.BytesIO:
-    data = pkgutil.get_data(__name__, f"Neighborhoods.csv")
+    data = pkgutil.get_data(__name__, "Neighborhoods.csv")
     if not data:
-        raise RuntimeError(f"Neighborhoods.csv gave us zero bytes")
+        raise RuntimeError("Neighborhoods.csv gave us zero bytes")
     return io.BytesIO(data)
 
 
