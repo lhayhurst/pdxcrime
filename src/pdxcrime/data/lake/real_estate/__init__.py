@@ -185,5 +185,4 @@ def _cleanup_neighborhoods(df, year):
         lnr = len(new_row)
         new_row = new_row + list(np.repeat(np.nan, len(df.columns) - lnr))
         df.loc[len(df.index) + 1] = new_row
-        print(len(df))
     return df

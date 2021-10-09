@@ -23,12 +23,12 @@ def mix_parquet_files(target: str, output_path: str):
             crime_df = cleanse_and_prep_crime_data(year, get_crime(year))
             parquet_file = op / f"{year}.parquet"
             typer.echo(f"writing {parquet_file}")
-            pq.write_table(pa.Table.from_pandas(crime_df), parquet_file)
+            pq.write_table(pa.Table.from_pandas(crime_df), str(parquet_file))
         elif target == "real-estate":
             re_df = cleanse_and_prep_real_estate_data(year, get_real_estate(year))
             parquet_file = op / f"{year}.parquet"
             typer.echo(f"writing {parquet_file}")
-            pq.write_table(pa.Table.from_pandas(re_df), parquet_file)
+            pq.write_table(pa.Table.from_pandas(re_df), str(parquet_file))
 
 
 @app.command()
