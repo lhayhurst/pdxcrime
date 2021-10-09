@@ -6,7 +6,10 @@ import pandas as pd
 
 def get_crime(year: int) -> io.BytesIO:
     assert year in range(2015, 2022), "I only have 2015->2021 data"
-    return io.BytesIO(pkgutil.get_data(__name__, f"{year}.csv"))
+    data = pkgutil.get_data(__name__, f"{year}.csv")
+    if not data:
+        raise RuntimeError(f"{year}.csv gave us zero bytes")
+    return io.BytesIO(data)
 
 
 CRIME_COLUMNS_TO_USE = (
