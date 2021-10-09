@@ -54,7 +54,7 @@ def test_cleanse_and_prep_neighborhood_data():
     assert len(df) > 0
 
 
-@pytest.mark.parametrize("year", list(range(2015, 2022)))
+@pytest.mark.parametrize("year", list(range(2015, 2020)))
 def test_can_join_on_neighborhoods(year):
     crime_df = cleanse_and_prep_crime_data(year, get_crime(year))
     re_df = cleanse_and_prep_real_estate_data(year, get_real_estate(year))
