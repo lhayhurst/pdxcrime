@@ -30,6 +30,8 @@ numpy = "^1.21.2"
 matplotlib = "^3.4.3"
 pandas = "^1.3.3"
 click = "^8.0.1"
+pyarrow = "^5.0.0"
+typer = "^0.4.0"
 
 
 [tool.poetry.dev-dependencies]
