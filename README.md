@@ -1,5 +1,3 @@
-![Build Status](https://github.com/lhayhurst/pdxcrime/actions/workflows/python-app.yml/badge.svg)
-
 # pdxcrime
 A data repository for pdx crime and real estate data, with Python code for cleansing and preparing the data to be joined by neighborhood. 
 
