@@ -44,10 +44,8 @@ def mix_csv_files(output_path: str) -> None:
 
     typer.echo("Cleaning data for 2015-2022")
     for year in range(2015, 2022):
-        crime_df = cleanse_and_prep_crime_data(year, get_crime(year))
-        crime_dfs.append(crime_df)
-        re_df = cleanse_and_prep_real_estate_data(year, get_real_estate(year))
-        real_estate_dfs.append(re_df)
+        crime_dfs.append(cleanse_and_prep_crime_data(year, get_crime(year)))
+        real_estate_dfs.append(cleanse_and_prep_real_estate_data(year, get_real_estate(year)))
 
     crime_df: pd.DataFrame = pd.concat(crime_dfs)
 
